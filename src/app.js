@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
 const pastesRouter = require("./pastes/pastes.router");
+const usersRouter = require("./users/users.router");
 app.use(express.json())
 
 // API Endpoints
-app.use("/pastes", pastesRouter); // Note: app.use
+app.use("/users", usersRouter);
+app.use("/pastes", pastesRouter);
+
 
 // Not found handler
 app.use((request, response, next) => {
